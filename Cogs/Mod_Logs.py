@@ -12,7 +12,7 @@ from cogs.utils.dataIO import dataIO
 DB_VERSION = 2
 
 
-class Mod_Logs:
+class Cogs:
     def __init__(self, bot):
         self.bot = bot
 

@@ -9,7 +9,7 @@ from __main__ import send_cmd_help
 from cogs.utils.dataIO import dataIO
 
 
-DB_VERSION = 3
+DB_VERSION = 1
 
 
 class Cogs:
@@ -144,7 +144,7 @@ class Cogs:
     async def _setup_questions(self, context):
         server = context.message.server
         author = context.message.author
-        instructions = '''Thank you for using Mods Logs, edited my V0LK! However, this cog requires some setting up. A dozen or so questions will be asked,
+        instructions = '''Thank you for using Mods Logs, edited by V0LK! However, this cog requires some setting up. A dozen or so questions will be asked,
                             and you\'re required to answer them with either **\'yes\'** or **\'no\'** answers.\n\n'''
         instructions += 'You get **2 minutes** to answer each question. If not answered it will be defaulted to **\'no\'**.\n\n'
         instructions += 'Then you\'re required to give a channel for each event category, these categories are:\n\n'

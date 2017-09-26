@@ -218,7 +218,7 @@ class Cogs:
         else:
             return False
 
-    @commands.group(pass_context=True, name='border', aliases=['Cogs', 'modlogs', 'logs'])
+    @commands.group(pass_context=True, name='ml', aliases=['modlog', 'modlogs', 'log', 'logs'])
     async def _Cogs(self, context):
         if context.invoked_subcommand is None:
             await send_cmd_help(context)

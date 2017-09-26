@@ -1,7 +1,7 @@
 {
     "AUTHOR" : "V0LK",
     "NAME" : "Mod Logs",
-    "SHORT" : "Mods can add roles, users can apply or relieve roles.",
-    "DESCRIPTION" : "Roles created with this cog have no permissions, it only functions for fun. It creates a role with 0 permissions, making it ideal for just color roles.",
-    "TAGS": []
+    "INSTALL_MSG" : "**Thank you for using my repo! For support join me on this Discord channel <https://discord.gg/sSsYuTs>\n>**",
+    "SHORT" : "Cog re-developped by V0LK.",
+    "DESCRIPTION" : ""
 }

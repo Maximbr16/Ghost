@@ -16,9 +16,9 @@ class Cogs:
     def __init__(self, bot):
         self.bot = bot
 
-        self.settings_file = 'data/mods_logs/settings.json'
+        self.settings_file = 'data/Cogs/settings.json'
         self.settings = dataIO.load_json(self.settings_file)
-        self.ignore_file = 'data/mods_logs/ignore.json'
+        self.ignore_file = 'data/Cogs/ignore.json'
         self.ignore = dataIO.load_json(self.ignore_file)
 
         self.event_types = {}
@@ -219,11 +219,11 @@ class Cogs:
             return False
 
     @commands.group(pass_context=True, name='border', aliases=['Cogs', 'modlogs', 'logs'])
-    async def _modslogs(self, context):
+    async def _Cogs(self, context):
         if context.invoked_subcommand is None:
             await send_cmd_help(context)
 
-    @_modslogs.command(pass_context=True, name='setup')
+    @_Cogs.command(pass_context=True, name='setup')
     @checks.mod_or_permissions(administrator=True)
     async def _setup(self, context):
         '''
@@ -236,7 +236,7 @@ class Cogs:
             message = 'Something didn\'t go quite right.'
         await self.bot.say(message)
 
-    @_modslogs.command(pass_context=True, name='ignoremember')
+    @_Cogs.command(pass_context=True, name='ignoremember')
     @checks.mod_or_permissions(administrator=True)
     async def _ignoremember(self, context, member: discord.Member):
         '''
@@ -247,7 +247,7 @@ class Cogs:
         message = done
         await self.bot.say(message)
 
-    @_modslogs.command(pass_context=True, name='ignorechannel')
+    @_Cogs.command(pass_context=True, name='ignorechannel')
     @checks.mod_or_permissions(administrator=True)
     async def _ignorechannel(self, context, channel: discord.Channel):
         '''
@@ -258,7 +258,7 @@ class Cogs:
         message = done
         await self.bot.say(message)
 
-    @_modslogs.command(pass_context=True, name='warn', aliases=['strike'])
+    @_Cogs.command(pass_context=True, name='warn', aliases=['strike'])
     @checks.mod_or_permissions(kick_members=True)
     async def _warn(self, context, member: discord.Member, *, reason):
         '''
@@ -273,7 +273,7 @@ class Cogs:
             message = 'Something didn\'t go quite right.'
         await self.bot.say(message)
 
-    @_modslogs.command(pass_context=True, name='kick', aliases=['boot'])
+    @_Cogs.command(pass_context=True, name='kick', aliases=['boot'])
     @checks.mod_or_permissions(kick_members=True)
     async def _kick_member(self, context, member: discord.Member, *, reason):
         '''
@@ -289,7 +289,7 @@ class Cogs:
             message = 'Something didn\'t go quite right.'
         await self.bot.say(message)
 
-    @_modslogs.command(pass_context=True, name='ban', aliases=['hammer'])
+    @_Cogs.command(pass_context=True, name='ban', aliases=['hammer'])
     @checks.mod_or_permissions(ban_members=True)
     async def _ban_member(self, context, member: discord.Member, *, reason):
         '''

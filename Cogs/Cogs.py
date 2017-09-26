@@ -218,7 +218,7 @@ class Cogs:
         else:
             return False
 
-    @commands.group(pass_context=True, name='border', aliases=['mod_logs', 'modlogs', 'logs'])
+    @commands.group(pass_context=True, name='border', aliases=['Cogs', 'modlogs', 'logs'])
     async def _modslogs(self, context):
         if context.invoked_subcommand is None:
             await send_cmd_help(context)
@@ -579,17 +579,17 @@ class Cogs:
 
 
 def check_folder():
-    if not os.path.exists('data/mod_logs'):
-        print('Creating data/mod_logs folder...')
-        os.makedirs('data/mod_logs')
+    if not os.path.exists('data/Cogs'):
+        print('Creating data/Cogs folder...')
+        os.makedirs('data/Cogs')
 
 
 def check_file():
     data = {}
 
     data['db_version'] = DB_VERSION
-    settings_file = 'data/mod_logs/settings.json'
-    ignore_file = 'data/mod_logs/ignore.json'
+    settings_file = 'data/Cogs/settings.json'
+    ignore_file = 'data/Cogs/ignore.json'
     if not dataIO.is_valid_json(settings_file):
         print('Creating default settings.json...')
         dataIO.save_json(settings_file, data)
@@ -599,7 +599,7 @@ def check_file():
             if check['db_version'] < DB_VERSION:
                 data = {}
                 data['db_version'] = DB_VERSION
-                print('mod_logs: Database version too old, please rerun the setup!')
+                print('Cogs: Database version too old, please rerun the setup!')
                 dataIO.save_json(settings_file, data)
 
     if not dataIO.is_valid_json(ignore_file):
@@ -610,5 +610,5 @@ def check_file():
 def setup(bot):
     check_folder()
     check_file()
-    cog = mod_logs(bot)
+    cog = Cogs(bot)
     bot.add_cog(cog)
